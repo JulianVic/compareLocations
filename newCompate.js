@@ -16,15 +16,11 @@ const getLocation = () => {
     });
 };
 
-//imprimir la ubicacion del usuario
 getLocation()
-    .then(({ lat, lon }) => {
-        // Redondear a 6 decimales
-        lat = parseFloat(lat.toFixed(6));
-        lon = parseFloat(lon.toFixed(6));
+.then(({ lat, lon }) => {
+    // Redondear a 6 decimales
+    lat = parseFloat(lat.toFixed(14));
+    lon = parseFloat(lon.toFixed(14));
 
-        console.log(lat, lon);
-    })
-    .catch((error) => {
-        console.error('Error al obtener la ubicación: ', error);
-    });
+    console.log(lat, lon);
+})
